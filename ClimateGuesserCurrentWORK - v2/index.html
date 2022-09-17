@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Climate Guesser</title>
+
+  <script>
+
+    var firsttime = localStorage.getItem("firsttime");
+    if (firsttime != "false") {
+      localStorage.setItem("firsttime", "false");
+
+      var id = (Math.floor(Math.random() * 1));
+
+      localStorage.setItem("questionID", id)
+
+    }
+
+  </script>
+
+
+  <!-- External js needed -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMggro7Qlc1aJiF3oMb0mFRXdikn85cd4&callback=initMap&libraries=places&v=weekly"
+    defer></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+
+
+  <!-- Dependencies -->
+  <script src="forjson.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js"></script>
+
+  <!-- Default stylesheet kinda useless -->
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.10.2/mvp.css">
+
+
+</head>
+
+<body>
+
+  <h1 id="Question">wait for question to load...</h1>
+  <br>
+  <div id="map"></div>
+
+  <br>
+
+  <button onclick="check();">Submit</button>
+
+
+</body>
+
+</html>
