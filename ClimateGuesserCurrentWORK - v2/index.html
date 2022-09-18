@@ -6,6 +6,16 @@
   <title>Climate Guesser</title>
 
 
+  
+
+  <!-- External js needed -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMggro7Qlc1aJiF3oMb0mFRXdikn85cd4&callback=initMap&libraries=places&v=weekly"
+    defer></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
   <!-- Dependencies -->
   <script src="forjson.js"></script>
 
@@ -15,54 +25,69 @@
   <!-- Default stylesheet kinda useless -->
   <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.10.2/mvp.css">
 
-
-  <!-- External js needed -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMggro7Qlc1aJiF3oMb0mFRXdikn85cd4&callback=initMap&libraries=places&v=weekly"
-    defer></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-
 </head>
 
 <body>
-  <div id="head">
+  <!-- <div id="head"> -->
+
+  <!-- <div class="colelctdetails">
+    <div class="formPopup" id="popupForm">
+      <label for="name">
+        <strong>Name</strong>
+      </label>
+      <input type="text" id="name" placeholder="Your Name" name="name" required>
+
+      <button type="button" class="btn cancel" onclick="submitForm()">Let's Play</button>
+      </form>
+    </div> -->
+
     <h1 id="title">Climate Guesser</h1>
+
+    <div id="head">
+      <h1 id="title">Climate Guesser</h1>
+      <div id="scorecard">
+        <img src="swiss_cheese.jpg" alt="Swiss Cheese" width="auto" height="65px">
+        <p id="score">0</p>
+      </div>
     <div id="scorecard">
       <img src="swiss_cheese.jpg" alt="Swiss Cheese" width="auto" height="65px">
       <p id="score">0</p>
     </div>
-  </div>
-  <h2 id="Question">wait for question to load...</h2>
-  <br>
-  <div id="maincontent">
-    <div id="map-contained">
-      <div id="map"></div>
+    <!-- </div> -->
+    <h2 id="Question">wait for question to load...</h2>
+    <br>
+    <div id="maincontent">
+      <div id="map-contained">
+        <div id="map"></div>
+      </div>
     </div>
-    <div id="insigt1img">
-      <img src="RCP26.png" alt="In mitigated scenario (RCP 2.6) Projected Temperature for 15 July 2069" width="35%">
-      <img src="RCP85.png" alt="In worst case no migration scenario (RCP 85) Projected Temperature for 15 July 2069" width="35%">
+
+
+    <br>
+    <div id="slidecontainer">
+      Range: 1981 to 3000 Years
+
+      <input type="range" min="1980" max="3000" value="2022" class="slider" id="yearselected">
     </div>
-  </div>
+
+    <br>
+
+    <div><button onclick="check();">Submit</button>
+
+      <h3 id="farviagps">...</h3>
+      <h3 id="farviayears">...</h3>
 
 
-  <br>
-  <div id="slidecontainer">
-    Range: 1980 to 3000 Years
+      <!-- <div id="insigt1img">
+        <img src="RCP26.png" alt="In mitigated scenario (RCP 2.6) Projected Temperature for 15 July 2069" width="45%">
+        <img src="RCP85.png" alt="In worst case no migration scenario (RCP 85) Projected Temperature for 15 July 2069"
+          width="45%">
+      </div> -->
+    </div>
 
-    <input type="range" min="1980" max="3000" value="2022" class="slider" id="yearselected">
-  </div>
+    <br>
 
-  <br>
-
-  <div><button onclick="check();">Submit</button>
-
-    <h3 id="farviagps"></h3>
-    <h3 id="farviayears"></h3>
-  </div>
-
-  <br>
-
+    <div> Disclaimer - All the data used is here from the Swiss Administration office</div>
 
 </body>
 

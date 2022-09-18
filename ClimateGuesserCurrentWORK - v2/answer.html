@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Climate Guesser</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  
+    <!-- Default stylesheet kinda useless -->
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.10.2/mvp.css">
+  
+  
+    <!-- External js needed -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMggro7Qlc1aJiF3oMb0mFRXdikn85cd4&callback=initMap&libraries=places&v=weekly"
+      defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<html>
+
+    <body>
+        <div id="head">
+          <h1 id="title">Climate Guesser</h1>
+          <div id="scorecard">
+            <img src="swiss_cheese.jpg" alt="Swiss Cheese" width="auto" height="65px">
+            <p id="score">0</p>
+          </div>
+        </div>
+        <h2 id="Question">The max temperature according to the prediction would be approx 42.1650 C on 15 July 2069...</h2>
+        <br>
+        <div id="insigt1img">
+          <img src="desert.svg" alt="Sahara Desert is one of the driest and hottest regions of the world, with a mean temperature sometimes over 30 °C (86 °F) and the average high temperatures in summer are over 40 °C (104 °F) for months at a time," width="15%">
+        </div>
+
+        <div id="maincontent">
+          <div id="map-contained">
+            <div id="map"></div>
+          </div>
+          <div id="insigt1img">
+            <img src="RCP26.png" alt="In mitigated scenario (RCP 2.6) Projected Temperature for 15 July 2069" width="45%">
+            <img src="RCP85.png" alt="In worst case no migration scenario (RCP 85) Projected Temperature for 15 July 2069" width="45%">
+          </div>
+        </div>
+</html>

@@ -118,7 +118,7 @@ function check() {
 
 
   markerforanswer = new google.maps.Marker({
-    position: { lat: dataset[0].Latitude, lng: dataset[0].Longitude },
+    position: { lat: dataset[questionID].Latitude, lng: dataset[questionID].Longitude },
     map,
     label: "A",
     title: "Answer",
@@ -143,24 +143,46 @@ function check() {
     map: map,
   });
 
-  var yearslider = document.getElementById('yearselected');
-  console.log(yearslider.value);
+  // var yearslider = document.getElementById('yearselected');
+  // console.log(yearslider.value);
 
 
-  var yeardifference = Math.abs(parseInt(yearslider.value - dataset[(parseInt(questionID))].Year));
-  console.log(yeardifference);
+  // var yeardifference = Math.abs(parseInt(yearslider.value - dataset[(parseInt(questionID))].Year));
+  // console.log(yeardifference);
+  // REMOVED THE SLIDER FOR YEAR
+
   var distance_found = calculate_distance(dataset[questionID].Latitude, dataset[questionID].Longitude, buffertempforlatlang.lat, buffertempforlatlang.lng, 'K');
 
   distance_found = Math.round(distance_found);
 
   document.getElementById("farviagps").innerHTML = ("You were " + distance_found + " KMs close.");
 
-  document.getElementById("farviayears").innerHTML = ("You were " + yeardifference + " years away.");
+  // document.getElementById("answer-related-1").innerHTML ="Text";
 
+  document.getElementById("answer-related-1").innerHTML = (dataset[(parseInt(questionID))].ForAnswer1);
+  
+  document.getElementById("answer-image-id").src = (dataset[(parseInt(questionID))].ForAnswer3);
+  document.getElementById("caption-for-image").innerHTML = (dataset[(parseInt(questionID))].ForAnswer2);
+
+  document.getElementById("fact-id").innerHTML = (dataset[(parseInt(questionID))].Fact);
+
+
+
+
+  // document.getElementById("farviayears").innerHTML = ("You were " + yeardifference + " years away.");
 
   console.log(distance_found);
 
-  var score = 1000 - distance_found;
+  var score_current=(localStorage.getItem("score"));
+  var score_int=parseInt(score_current);
+  score_int += (200-parseInt(distance_found));
+
+  localStorage.setItem("score", score_int);
+
+  document.getElementById("score").innerHTML = (" x "+score_int);
+
+
+  window.scrollTo(0, document.body.scrollHeight);
 
 
 }
@@ -171,6 +193,15 @@ window.onload = function () {
 };
 
 
+function Next(){
+  location.reload();
+}
+
+function EndGame(){
+  openForm();
+  localStorage.clear();
+
+}
 
 
 function calculate_distance(lat1, lon1, lat2, lon2, unit) {
@@ -203,22 +234,23 @@ function onpageloaddo() {
 
   var firsttime = localStorage.getItem("firsttime");
 
+
+  
+  var score_current=(localStorage.getItem("score"));
+  var score_int=parseInt(score_current);
+  document.getElementById("score").innerHTML = (" x "+score_int);
+
+
   // questionsAsked = localStorage.getItem("questionsAsked"); 
 
 
   if (firsttime != "false") {
-
-
-    function openForm() {
-      document.getElementById("popupForm").style.display = "block";
-    }
-    function submitForm() {
-      localStorage.setItem("name",document.getElementById("name").value);
-    }
-
     localStorage.setItem("firsttime", "false");
 
-    var id = parseInt(Math.ceil(Math.random() * 3)); //CHANGE TO NUMBER OF QUESITONS HERE
+    localStorage.setItem("score", 0);
+
+
+    var id = parseInt((Math.random() * 1)); //CHANGE TO NUMBER OF QUESITONS HERE
     id--;
 
     localStorage.setItem("questionID", id);
@@ -232,7 +264,7 @@ function onpageloaddo() {
   }
   else {
 
-    var questionID = parseInt(Math.ceil(Math.random() * 3)); //CHANGE TO NUMBER OF QUESITONS HERE
+    var questionID = parseInt((Math.random() * 1)); //CHANGE TO NUMBER OF QUESITONS HERE
 
     // var questionID = parseInt(localStorage.getItem("questionID"));
 
@@ -247,7 +279,7 @@ function onpageloaddo() {
 
     for (i = 0, j = 1; i < questionsAsked.length; i++) {
       if (questionsAsked[i] === questionID) {
-        questionID = parseInt(Math.ceil(Math.random() * 3));  //CHANGE TO NUMBER OF QUESITONS HERE
+        questionID = parseInt((Math.random() * 1));  //CHANGE TO NUMBER OF QUESITONS HERE
       }
 
 
@@ -255,9 +287,6 @@ function onpageloaddo() {
 
     localStorage.setItem("questionID", questionID);
 
-    // while (questionsAsked.find(parseInt(questionID)) =>  != undefined) {
-    //   questionID = parseInt(Math.floor(Math.random() * 40));
-    // }
 
   }
 
