@@ -89,21 +89,21 @@ function check() {
   // COMMENT OUT THE BELOW BEFORE DEPLOYMENT
   // var questionID = parseInt(1);
 
-  if (questionsAsked != null) {
+  // if (questionsAsked != null) {
 
-    questionsAsked = [questionsAsked];
+  //   questionsAsked = [questionsAsked];
 
-    questionsAsked.push(parseInt(questionID));
+  //   questionsAsked.push(parseInt(questionID));
 
-    localStorage.setItem("questionsAsked", questionsAsked)
+  //   localStorage.setItem("questionsAsked", questionsAsked)
 
-  }
-  else {
-    localStorage.setItem("questionsAsked", [questionID])
+  // }
+  // else {
+  //   localStorage.setItem("questionsAsked", [questionID])
 
-  }
-  console.log(questionID)
-  console.log(questionsAsked);
+  // }
+  // console.log(questionID)
+  // console.log(questionsAsked);
 
 
 
@@ -210,7 +210,7 @@ function ResetGame(){
   window.location.href = "index.html";
 }
 
-function ShareScore()
+function ShareScore(){}
 
 
 function calculate_distance(lat1, lon1, lat2, lon2, unit) {
@@ -259,8 +259,10 @@ function onpageloaddo() {
     localStorage.setItem("score", 0);
 
 
-    var id = parseInt((Math.random() * 2)); //CHANGE TO NUMBER OF QUESITONS HERE
-    // id--;
+    // var id = parseInt((Math.random() * 2)); //CHANGE TO NUMBER OF QUESITONS HERE
+
+
+    var id=0; //COmment it out later jugaad
 
     localStorage.setItem("questionID", id);
 
@@ -273,26 +275,27 @@ function onpageloaddo() {
   }
   else {
 
-    var questionID = parseInt((Math.random() * 2)); //CHANGE TO NUMBER OF QUESITONS HERE
+    // var questionID = parseInt((Math.random() * 2)); //CHANGE TO NUMBER OF QUESITONS HERE
 
+    var questionID = 1;
     // var questionID = parseInt(localStorage.getItem("questionID"));
 
-    questionsAsked = localStorage.getItem("questionsAsked");
+    // questionsAsked = localStorage.getItem("questionsAsked");
 
-    console.log(questionsAsked);
+    // console.log(questionsAsked);
 
-    questionsAsked = [questionsAsked];
+    // questionsAsked = [questionsAsked];
 
-    console.log(questionsAsked);
-    console.log(questionID)// questionID
+    // console.log(questionsAsked);
+    // console.log(questionID)// questionID
 
-    for (i = 0, j = 1; i < questionsAsked.length; i++) {
-      if (questionsAsked[i] === questionID) {
-        questionID = parseInt((Math.random() * 2));  //CHANGE TO NUMBER OF QUESITONS HERE
-      }
+    // for (i = 0, j = 1; i < questionsAsked.length; i++) {
+    //   if (questionsAsked[i] === questionID) {
+    //     questionID = parseInt((Math.random() * 2));  //CHANGE TO NUMBER OF QUESITONS HERE
+    //   }
 
 
-    }
+    // }
 
     localStorage.setItem("questionID", questionID);
 
