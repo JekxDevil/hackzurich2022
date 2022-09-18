@@ -23,36 +23,42 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
 
-
-
-
-
-
 </head>
 
 <body>
 
-  <h1 id="Question">wait for question to load...</h1>
-  <br>
-  <div id="map-contained">
-    <div id="map"></div>
+  <div id="head">
+    <h1 id="title">Climate Guesser</h1>
+    <div id="scorecard">
+      <img src="swiss_cheese.jpg" alt="Swiss Cheese" width="auto" height="65px">
+      <p id="score">0</p>
+    </div>
   </div>
+  <h2 id="Question">wait for question to load...</h2>
+  <br>
+  <div>
+    <div id="map-contained">
+      <div id="map"></div>
+    </div>
+  </div>
+
 
   <br>
   <div id="slidecontainer">
-    Range: 1000 to 3000 Years
+    Range: 1980 to 3000 Years
 
-     <input type="range" min="1000" max="3000" value="1" class="slider" id="yearselected"> 
+    <input type="range" min="1980" max="3000" value="2022" class="slider" id="yearselected">
   </div>
 
   <br>
 
-  <button onclick="check();">Submit</button>
+  <div><button onclick="check();">Submit</button>
 
-<br>
-<h3 id="farviagps"></h3>
-<br>
-<h3 id="farviayears"></h3>
+    <h3 id="farviagps"></h3>
+    <h3 id="farviayears"></h3>
+  </div>
+
+  <br>
 
 
 </body>
