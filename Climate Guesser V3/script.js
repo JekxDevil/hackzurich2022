@@ -13,8 +13,10 @@ var questionsAsked;
 function initMap() {
   myLatlng = { lat: 46.8182, lng: 8.2275 };
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8.2,
+    zoom: 7.8,
     center: myLatlng,
+    mapTypeId: 'terrain'
+
   });
   // Create the initial InfoWindow.
   let infoWindow = new google.maps.InfoWindow({
@@ -198,10 +200,17 @@ function Next(){
 }
 
 function EndGame(){
-  openForm();
+  window.location.href = "end.html";
+}
+
+function ResetGame(){
+  
   localStorage.clear();
 
+  window.location.href = "index.html";
 }
+
+function ShareScore()
 
 
 function calculate_distance(lat1, lon1, lat2, lon2, unit) {
@@ -250,8 +259,8 @@ function onpageloaddo() {
     localStorage.setItem("score", 0);
 
 
-    var id = parseInt((Math.random() * 1)); //CHANGE TO NUMBER OF QUESITONS HERE
-    id--;
+    var id = parseInt((Math.random() * 2)); //CHANGE TO NUMBER OF QUESITONS HERE
+    // id--;
 
     localStorage.setItem("questionID", id);
 
@@ -264,7 +273,7 @@ function onpageloaddo() {
   }
   else {
 
-    var questionID = parseInt((Math.random() * 1)); //CHANGE TO NUMBER OF QUESITONS HERE
+    var questionID = parseInt((Math.random() * 2)); //CHANGE TO NUMBER OF QUESITONS HERE
 
     // var questionID = parseInt(localStorage.getItem("questionID"));
 
@@ -279,7 +288,7 @@ function onpageloaddo() {
 
     for (i = 0, j = 1; i < questionsAsked.length; i++) {
       if (questionsAsked[i] === questionID) {
-        questionID = parseInt((Math.random() * 1));  //CHANGE TO NUMBER OF QUESITONS HERE
+        questionID = parseInt((Math.random() * 2));  //CHANGE TO NUMBER OF QUESITONS HERE
       }
 
 

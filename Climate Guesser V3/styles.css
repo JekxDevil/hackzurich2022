@@ -11,17 +11,37 @@
 /* #map */
 #map {
   /* height: 70%; */
-  height: 600px;
+  height: 400px;
   border-radius: 10px;
 }
 
-
-#head-content {
-  display: flex;
-  /* align-items: right; */
-  float: right;
-  /* justify-content: space-between; */
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 40px;
 }
+
+.grid-container2 {
+  display: grid;
+
+
+
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 20px; */
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* #head-content { */
+  /* display: flex; */
+  /* align-items: right; */
+  /* float: right; */
+  /* justify-content: space-between; */
+/* } */
 /* 
  * Optional: Makes the sample page fill the window. 
  */
@@ -30,6 +50,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 20px;
+  scroll-behavior: smooth;
 }
 
 
@@ -71,3 +92,8 @@ body {
   cursor: pointer;
 }
 
+#disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

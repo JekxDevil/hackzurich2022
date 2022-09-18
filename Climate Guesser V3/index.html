@@ -2,6 +2,7 @@
 
 <html>
 <meta charset="UTF-8">
+
 <head>
   <title>Swiss Climate Guesser</title>
 
@@ -9,14 +10,14 @@
   <!-- Dependencies -->
   <script src="forjson.js"></script>
 
+
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js"></script>
 
   <!-- Default stylesheet kinda useless -->
   <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.10.2/mvp.css"> -->
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
 
 
   <!-- External js needed -->
@@ -36,15 +37,22 @@
 <body>
 
 
-  <h1 id="title">Swiss Climate Guesser</h1>
 
-  <div id="head-content">
-    <div id="image">
-      <img src="cheese-wedge.png" alt="Swiss Cheese" width="65px" height="65px">
+  <div class="grid-container" id="head-content">
+    <div class="grid-child">
+      <h1 id="title">Swiss Climate Guesser</h1>
     </div>
-    <div id="scorecard">
+    <div class="grid-child">
+      <div class="grid-container2">
 
-      <h2 id="score"> x 0</h2>
+        <div class="grid-child" id="image">
+          <img src="cheese-wedge.png" alt="Swiss Cheese" width="65px" height="65px">
+        </div>
+        <div class="grid-child" id="scorecard">
+
+          <h2 id="score"> x 0</h2>
+        </div>
+      </div>
     </div>
   </div>
   <br>
@@ -64,15 +72,16 @@
 
   <br>
 
-  <button onclick="check();">Submit 📤</button>
+  <button onclick="check();" href="#toans">Submit 📤</button>
 
   <button onclick="Next();">Next ⏩</button>
 
-  
+
   <button onclick="EndGame();">End Game 🏁</button>
-  
+
 
   <br>
+  <div id="toans"></div>
   <h3 id="farviagps"></h3>
 
   <h3 id="answer-related-1"></h3>
@@ -92,7 +101,7 @@
   <br>
   <!-- <h3 id="farviayears"></h3> -->
 
-
+  <div id="disclaimer"> <p style="font-size:10px; "> Disclaimer - All the data used is here from the Swiss Administration office https://github.com/hack-with-admin-ch/HackZurich2022#data. Note that the date is not forecast, but only running projections. There can be abnormailties or discprepencies in the data used.</p></div>
 </body>
 
 </html>

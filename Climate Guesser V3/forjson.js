@@ -7,7 +7,7 @@ var dataset = [
         "ForAnswer1": "The temperature in the Locarno (Ticino) will be 42.16501 C",
         "ForAnswer2": "In mitigated scenario (RCP 2.6) Projected Temperature for 15 July 2069 & worst case no migration scenario (RCP 85) Projected Temperature for 15 July 2069",
         "ForAnswer3":"q1.png",
-        "Fact": "The Sahara Desert is one of the driest and hottest regions of the world, with a mean temperature sometimes over 30 °C (86 °F) and the average high temperatures in summer are over 40 °C (104 °F) for months at a time."
+        "Fact": "The Sahara Desert 🏜️ is one of the driest and hottest regions of the world, with a mean temperature sometimes over 30 °C (86 °F) and the average high temperatures in summer are over 40 °C (104 °F) for months at a time."
         
     },
     {
@@ -15,9 +15,9 @@ var dataset = [
         "Latitude": 46.384611,
         "Longitude": 9.841712,
         // "Year": 2086,
-        "ForAnswer1": "The Vadret da Roseg glacier",
+        "ForAnswer1": "The Vadret da Roseg glacier", 
         "ForAnswer2": "",
-        "ForAnswer3":"",
+        "ForAnswer3":"q2.jpg",
         "Fact": "🏂 The melting of the Glaciers reveals skier impacts exacerbate climate change https://www.powder.com/stories/is-skiing-good-for-glacier-health-or-speeding-their-demise"
     }
 ];
