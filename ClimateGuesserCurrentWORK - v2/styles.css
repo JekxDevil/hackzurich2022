@@ -41,6 +41,20 @@
   margin-top: -15px !important;
 }
 
+#maincontent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#insight1img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* 
  * Optional: Makes the sample page fill the window. 
  */
